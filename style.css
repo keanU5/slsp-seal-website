@@ -1,0 +1,164 @@
+/* 1. SETUP BASE STYLES AND COLORS */
+:root {
+    --primary-blue: #004b87; 
+    --primary-red: #e31837;  
+    --primary-yellow: #ffc72c; 
+    --dark-text: #333333;
+    --light-bg: #f8fbff; /* Softer light blue-ish white for a modern feel */
+    --white: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--dark-text);
+    background-color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 800; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.text-center { text-align: center; }
+
+/* 2. HEADER & NAVIGATION */
+.main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 50px; background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 2000; }
+.logo-container { display: flex; align-items: center; gap: 15px; }
+.logo { height: 60px; }
+.seal-logo { height: 40px; }
+.mobile-menu-btn { display: none; font-size: 24px; color: var(--primary-blue); cursor: pointer; }
+.main-nav ul { display: flex; list-style: none; align-items: center; gap: 20px; }
+.main-nav a { font-family: 'Montserrat', sans-serif; text-decoration: none; color: var(--primary-blue); font-weight: 700; font-size: 13px; text-transform: uppercase; transition: color 0.3s; }
+.main-nav a:hover { color: var(--primary-red); }
+.donate-btn { background-color: var(--primary-red); color: var(--white) !important; padding: 10px 20px; border-radius: 4px; }
+.donate-btn:hover { background-color: #bd142d; }
+
+/* 3. HERO BANNER */
+.hero { background: linear-gradient(rgba(0, 75, 135, 0.65), rgba(0, 75, 135, 0.85)), url('images/hero-bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed; height: 80vh; display: flex; justify-content: center; align-items: center; text-align: center; color: var(--white); padding: 20px; border-bottom: 8px solid var(--primary-yellow); }
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 10px; color: var(--white); text-transform: uppercase; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+.hero-content p { font-size: 1.2rem; color: var(--white); margin-bottom: 15px; }
+.hero-content .tagline { font-size: 1.8rem; color: var(--primary-yellow); font-style: italic; font-weight: bold; margin-bottom: 40px; }
+.cta-button { font-family: 'Montserrat', sans-serif; background-color: var(--primary-yellow); color: var(--primary-blue); text-decoration: none; padding: 15px 35px; font-size: 16px; font-weight: 800; border-radius: 4px; text-transform: uppercase; transition: all 0.3s ease; display: inline-block;}
+.cta-button:hover { background-color: var(--primary-red); color: var(--white); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+/* 4. ABOUT US SECTION */
+.about-section { padding: 80px 0; background-color: var(--light-bg); }
+.section-title { text-align: center; font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 50px; text-transform: uppercase; }
+.subsection-title { color: var(--primary-blue); font-size: 2rem; margin-bottom: 30px; text-transform: uppercase;}
+.lead-text { font-size: 1.1rem; max-width: 900px; margin: 0 auto 40px auto; color: #555; }
+
+.vission-mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 60px; }
+.vm-card { background-color: var(--white); padding: 35px; border-radius: 12px; border-top: 5px solid var(--primary-blue); box-shadow: 0 10px 30px rgba(0,75,135,0.08); transition: transform 0.3s;}
+.vm-card:hover { transform: translateY(-5px); }
+.vm-card h3 { color: var(--primary-blue); margin-bottom: 15px; font-size: 1.5rem; }
+.vm-card i { color: var(--primary-red); margin-right: 10px; }
+
+/* Redesigned Core Values (Icon Cards) */
+.core-values-wrapper { margin-bottom: 60px; }
+.core-values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
+.value-card { background-color: var(--primary-blue); color: var(--white); padding: 25px 15px; border-radius: 12px; transition: transform 0.3s ease, background-color 0.3s; box-shadow: 0 8px 20px rgba(0,75,135,0.15); }
+.value-card i { font-size: 2.5rem; color: var(--primary-yellow); margin-bottom: 15px; transition: transform 0.3s; }
+.value-card h4 { font-size: 0.95rem; font-weight: 700; line-height: 1.4; }
+.value-card:hover { transform: translateY(-8px); background-color: var(--primary-red); }
+.value-card:hover i { transform: scale(1.2); color: var(--white); }
+
+/* Mentors */
+.governance-section { background-color: var(--white); padding: 40px; border-radius: 12px; border-left: 5px solid var(--primary-red); box-shadow: 0 10px 30px rgba(0,75,135,0.08); }
+.governance-section h3 { color: var(--primary-blue); margin-bottom: 15px; font-size: 1.5rem;}
+.mentors-list { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+.mentor-badge { background-color: var(--light-bg); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; color: var(--primary-blue); border: 1px solid #dce8f5; font-weight: 600;}
+.mentor-badge i { color: var(--primary-yellow); margin-right: 5px; }
+
+/* 5. REDESIGNED 7 CORE PILLARS */
+.programs-section { padding: 80px 0; background-color: var(--white); }
+.grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 20px;}
+
+.content-card { background-color: var(--white); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); transition: all 0.3s ease; text-align: center; padding: 40px 25px 25px 25px; position: relative; border: 1px solid #f0f0f0; margin-top: 30px;}
+.content-card:hover { transform: translateY(-12px); box-shadow: 0 15px 35px rgba(0,75,135,0.15); border-color: var(--primary-blue); }
+
+.floating-icon { width: 70px; height: 70px; background-color: var(--primary-blue); color: var(--white); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; position: absolute; top: -35px; left: 50%; transform: translateX(-50%); border: 5px solid var(--white); box-shadow: 0 5px 15px rgba(0,75,135,0.2); transition: background-color 0.3s, transform 0.3s; }
+.content-card:hover .floating-icon { background-color: var(--primary-red); transform: translateX(-50%) scale(1.1); }
+
+.card-body h3 { font-size: 1.25rem; color: var(--primary-blue); margin-bottom: 15px; margin-top: 10px;}
+.card-body p { font-size: 0.95rem; color: #666; line-height: 1.6;}
+
+/* 6. CLASSIFIED CLUBS & MAP SECTION */
+.clubs-section { padding: 80px 0; background-color: var(--light-bg); }
+.clubs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+.club-list { display: flex; flex-direction: column; gap: 30px; }
+
+/* Regional Groupings */
+.region-group { background: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+.region-title { font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 20px; border-bottom: 2px solid var(--primary-yellow); padding-bottom: 10px; }
+.region-title i { color: var(--primary-red); margin-right: 8px; }
+
+.club-item { margin-bottom: 15px; padding-left: 15px; border-left: 3px solid var(--primary-blue); }
+.club-item:last-child { margin-bottom: 0; }
+.club-item h4 { color: var(--dark-text); font-size: 1.05rem; margin-bottom: 3px; }
+.club-item p { color: #777; font-size: 0.9rem; }
+
+/* Interactive Map Styling */
+.map-container { height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; overflow: hidden;}
+#clubMap { width: 100%; height: 100%; min-height: 600px; z-index: 1; }
+
+/* 7. PARTNERS WITH "LIFT & GLOW" ANIMATION */
+.partners-section { padding: 80px 0; background-color: var(--white); }
+.partner-category { margin-bottom: 60px; }
+.partner-category h3 { color: var(--primary-blue); border-bottom: 2px solid var(--primary-yellow); display: inline-block; padding-bottom: 10px; margin-bottom: 40px; text-transform: uppercase; font-size: 1.3rem;}
+
+.partners-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 45px; }
+
+/* The Lift & Glow Effect */
+.partners-grid img { 
+    max-height: 90px; 
+    object-fit: contain; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Gives a slight 'bounce' feel */
+    border-radius: 8px; 
+    padding: 5px;
+    background-color: transparent;
+}
+
+.partners-grid img:hover { 
+    transform: translateY(-8px) scale(1.08); 
+    box-shadow: 0 15px 30px rgba(0, 75, 135, 0.15); 
+    background-color: var(--white); /* Ensures shadows look clean behind PNGs */
+}
+
+/* 8. FOOTER */
+.main-footer { background-color: var(--primary-blue); color: var(--white); padding: 60px 0 20px 0; }
+.footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-col h4 { color: var(--primary-yellow); margin-bottom: 20px; font-size: 1.2rem; }
+.footer-col p { font-size: 0.9rem; margin-bottom: 12px; color: #d1e5f8; }
+.footer-col i { width: 20px; color: var(--primary-yellow); }
+
+.social-links { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
+.social-links a { display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); color: var(--white); border-radius: 50%; text-decoration: none; transition: all 0.3s ease; }
+.social-links a:hover { background-color: var(--primary-yellow); color: var(--primary-blue); transform: translateY(-3px); }
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: #a4c8eb; }
+
+/* 9. ANIMATIONS */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeIn 1.5s ease forwards; }
+.slide-up { animation: slideUp 1s ease forwards; opacity: 0; }
+
+/* 10. MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .main-header { padding: 15px 20px; flex-wrap: wrap; }
+    .mobile-menu-btn { display: block; }
+    .main-nav { display: none; width: 100%; margin-top: 15px; }
+    .main-nav.active { display: block; }
+    .main-nav ul { flex-direction: column; gap: 15px; background-color: var(--light-bg); padding: 20px; border-radius: 8px; }
+    
+    .hero-content h1 { font-size: 2rem; }
+    .hero-content .tagline { font-size: 1.3rem; }
+    
+    .vission-mission-grid { grid-template-columns: 1fr; }
+    
+    .clubs-layout { grid-template-columns: 1fr; }
+    #clubMap { min-height: 400px; margin-bottom: 20px; }
+    
+    .grid-container { gap: 60px; /* More space between cards on mobile due to floating icon */ }
+}
