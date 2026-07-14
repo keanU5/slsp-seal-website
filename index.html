@@ -18,11 +18,11 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- CSS File -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4.0">
 </head>
 <body>
 
-    <!-- TOP NAVIGATION -->
+    <!-- TOP NAVIGATION (Exactly 7 Links as requested) -->
     <header class="main-header">
         <div class="logo-container">
             <img src="images/slsp-logo.jpg" alt="SLSP Logo" class="logo">
@@ -35,23 +35,41 @@
         
         <nav class="main-nav" id="navMenu">
             <ul>
-                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#about" onclick="toggleMenu()">About Us</a></li>
-                <li><a href="#programs" onclick="toggleMenu()">Programs</a></li>
-                <li><a href="#clubs" onclick="toggleMenu()">Clubs</a></li>
-                <li><a href="#partners" onclick="toggleMenu()">Partners</a></li>
-                <li><a href="#footer" class="donate-btn" onclick="toggleMenu()">Donate</a></li>
+                <!-- 1 --> <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <!-- 2 --> <li><a href="#about" onclick="toggleMenu()">About Us</a></li>
+                <!-- 3 --> <li><a href="#whatwedo" onclick="toggleMenu()">What We Do</a></li>
+                <!-- 4 --> <li><a href="#trainings" onclick="toggleMenu()">Trainings</a></li>
+                <!-- 5 --> <li><a href="#clubs" onclick="toggleMenu()">Clubs</a></li>
+                <!-- 6 --> <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                <!-- 7 --> <li><a href="#donate" class="donate-btn" onclick="toggleMenu()">Donate</a></li>
             </ul>
         </nav>
+        <!-- Red & Yellow Flag Accent Line -->
+        <div class="flag-accent"></div>
     </header>
 
-    <!-- HERO BANNER -->
+    <!-- HERO BANNER WITH IMAGE SLIDER -->
     <section id="home" class="hero fade-in">
+        <!-- The Slider Images -->
+        <div class="hero-slider">
+            <!-- Image 1 -->
+            <div class="hero-slide active" style="background-image: url('images/hero-bg.jpg');"></div>
+            <!-- Image 2 (using one of the new photos) -->
+            <div class="hero-slide" style="background-image: url('images/sports-flag.jpg');"></div>
+            <!-- Image 3 (using one of the new photos) -->
+            <div class="hero-slide" style="background-image: url('images/bacnotan-pushups.jpg');"></div>
+        </div>
+        
+        <!-- Dark Overlay so text is readable -->
+        <div class="hero-overlay"></div>
+
+        <!-- The Welcome Message & CTA -->
         <div class="hero-content">
+            <h2 class="welcome-text">Welcome to SLSP & SEAL Network</h2>
             <h1>Building Resilient Communities</h1>
             <p>Through Drowning Prevention, Lifesaving Education, and Lifesaving Sports.</p>
             <p class="tagline">"Bringing People Together"</p>
-            <a href="#about" class="cta-button">Discover Our Mission</a>
+            <a href="#contact" class="cta-button">Apply to Join</a>
         </div>
     </section>
 
@@ -63,7 +81,6 @@
                 <p class="lead-text">Established in 2024, Surf Life Saving Philippines Inc. (SLSP) and the South East Asia Lifesaving (SEAL) Network serve as the lead agencies for drowning prevention, water safety, and professional lifeguard development, operating with a National Office in Bacnotan, La Union.</p>
             </div>
 
-            <!-- Vision & Mission -->
             <div class="vission-mission-grid">
                 <div class="vm-card slide-up" style="animation-delay: 0.1s;">
                     <h3><i class="fa-solid fa-eye"></i> Our Vision</h3>
@@ -75,117 +92,230 @@
                 </div>
             </div>
 
-            <!-- REDESIGNED CORE VALUES -->
+            <!-- CORE VALUES -->
             <div class="core-values-wrapper text-center fade-in">
                 <h3 class="subsection-title">Our Core Values</h3>
                 <div class="core-values-grid">
-                    <div class="value-card">
-                        <i class="fa-solid fa-hands-holding-heart"></i>
-                        <h4>Service Before Self</h4>
-                    </div>
-                    <div class="value-card">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                        <h4>Professionalism & Integrity</h4>
-                    </div>
-                    <div class="value-card">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <h4>Safety & Excellence</h4>
-                    </div>
-                    <div class="value-card">
-                        <i class="fa-solid fa-people-group"></i>
-                        <h4>Volunteerism & Resilience</h4>
-                    </div>
-                    <div class="value-card">
-                        <i class="fa-solid fa-handshake-angle"></i>
-                        <h4>Inclusion & Respect</h4>
-                    </div>
-                    <div class="value-card">
-                        <i class="fa-solid fa-lightbulb"></i>
-                        <h4>Partnership & Innovation</h4>
-                    </div>
+                    <div class="value-card"><i class="fa-solid fa-hands-holding-heart"></i><h4>Service Before Self</h4></div>
+                    <div class="value-card"><i class="fa-solid fa-scale-balanced"></i><h4>Professionalism & Integrity</h4></div>
+                    <div class="value-card"><i class="fa-solid fa-shield-halved"></i><h4>Safety & Excellence</h4></div>
+                    <div class="value-card"><i class="fa-solid fa-people-group"></i><h4>Volunteerism & Resilience</h4></div>
+                    <div class="value-card"><i class="fa-solid fa-handshake-angle"></i><h4>Inclusion & Respect</h4></div>
+                    <div class="value-card"><i class="fa-solid fa-lightbulb"></i><h4>Partnership & Innovation</h4></div>
                 </div>
             </div>
             
-            <!-- Governance & Mentors -->
+            <!-- Governance, Mentors & Carousel -->
             <div class="governance-section slide-up">
-                <h3>Governance & Professional Mentorship</h3>
-                <p>Our operations are strictly guided by the standards of Surf Life Saving Australia and the ILS. We receive technical guidance from elite lifesaving professionals:</p>
-                <div class="mentors-list">
-                    <span class="mentor-badge"><i class="fa-solid fa-star"></i> <strong>David Field</strong> (SEAL Convenor)</span>
-                    <span class="mentor-badge"><i class="fa-solid fa-user"></i> David Hurt</span>
-                    <span class="mentor-badge"><i class="fa-solid fa-user"></i> Ana Claudine Zamora</span>
-                    <span class="mentor-badge"><i class="fa-solid fa-user"></i> Adam Mills</span>
-                    <span class="mentor-badge"><i class="fa-solid fa-user"></i> Jason Pearson</span>
-                    <span class="mentor-badge"><i class="fa-solid fa-user"></i> Scott McCartney</span>
-                    <span class="mentor-badge"><i class="fa-solid fa-user"></i> Lachlan Field</span>
-                    <span class="mentor-badge"><i class="fa-solid fa-user"></i> Vu Thin</span>
+                <div class="text-center" style="margin-bottom: 30px;">
+                    <h3 class="subsection-title">Governance & Professional Mentorship</h3>
+                    <p style="color: #555; max-width: 800px; margin: 0 auto;">Our operations are strictly guided by the standards of Surf Life Saving Australia and the ILS. We receive technical guidance from elite lifesaving professionals:</p>
+                </div>
+
+                <div class="mentors-grid">
+                    <div class="mentor-profile"><div class="mentor-icon"><i class="fa-solid fa-user-tie"></i></div><h4>David Field</h4><p>SEAL Convenor</p></div>
+                    <div class="mentor-profile"><div class="mentor-icon"><i class="fa-solid fa-user-tie"></i></div><h4>David Hurt</h4><p>Professional Mentor</p></div>
+                    <div class="mentor-profile"><div class="mentor-icon"><i class="fa-solid fa-user-tie"></i></div><h4>Adam Mills</h4><p>Professional Mentor</p></div>
+                    <div class="mentor-profile"><div class="mentor-icon"><i class="fa-solid fa-user-tie"></i></div><h4>Jason Pearson</h4><p>Professional Mentor</p></div>
+                    <div class="mentor-profile"><div class="mentor-icon"><i class="fa-solid fa-user-tie"></i></div><h4>Scott McCartney</h4><p>Professional Mentor</p></div>
+                    <div class="mentor-profile"><div class="mentor-icon"><i class="fa-solid fa-user-tie"></i></div><h4>Lachlan Field</h4><p>Professional Mentor</p></div>
+                    <div class="mentor-profile"><div class="mentor-icon"><i class="fa-solid fa-user-tie"></i></div><h4>Vu Thin</h4><p>Professional Mentor</p></div>
+                </div>
+
+                <!-- Governance Image Carousel -->
+                <div class="carousel-wrapper">
+                    <h4 class="text-center" style="color: var(--primary-blue); margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase;">Governance & Leadership</h4>
+                    
+                    <div class="carousel-container">
+                        <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                        
+                        <div class="carousel-track-container">
+                            <ul class="carousel-track" id="govCarousel">
+                                <li class="carousel-slide">
+                                    <img src="images/df-white-cap.jpg" alt="David Field">
+                                    <div class="slide-caption">David Field in white cap</div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="images/df-pool.jpg" alt="David Field Symposium">
+                                    <div class="slide-caption">David Field in Drowning Prevention Symposium</div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="images/rlss-cert.jpg" alt="RLSS Certificate">
+                                    <div class="slide-caption">Royal Life Saving Society Bronze Award</div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <img src="images/negros-occ.jpg" alt="Negros Occidental">
+                                    <div class="slide-caption">Province of Negros Occidental-PDRRMO & Administrator</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button class="carousel-btn next-btn" onclick="moveCarousel(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- REDESIGNED 7 CORE PILLARS -->
-    <section id="programs" class="programs-section">
+<!-- DROWNING DATA & STATISTICS (Requirement #10) -->
+    <section id="drowning-data" class="stats-section fade-in">
+        <div class="container text-center">
+            <h2 class="section-title" style="color: var(--white);">The Reality of Drowning</h2>
+            <p style="color: var(--primary-yellow); margin-bottom: 50px; font-size: 1.1rem;">Data visualization and national statistics driving our lifesaving mission.</p>
+            
+            <div class="stats-grid">
+                <!-- Stat 1 -->
+                <div class="stat-box slide-up">
+                    <i class="fa-solid fa-water"></i>
+                    <h3 class="counter" data-target="3000">0</h3><span class="plus">+</span>
+                    <p>Estimated Drowning Incidents Annually</p>
+                </div>
+                <!-- Stat 2 -->
+                <div class="stat-box slide-up" style="animation-delay: 0.1s;">
+                    <i class="fa-solid fa-child-reaching"></i>
+                    <h3 class="counter" data-target="1500">0</h3><span class="plus">+</span>
+                    <p>Children at Risk</p>
+                </div>
+                <!-- Stat 3 -->
+                <div class="stat-box slide-up" style="animation-delay: 0.2s;">
+                    <i class="fa-solid fa-life-ring"></i>
+                    <h3 class="counter" data-target="1000">0</h3><span class="plus">+</span>
+                    <p>Lifesavers & Responders Trained</p>
+                </div>
+                <!-- Stat 4 -->
+                <div class="stat-box slide-up" style="animation-delay: 0.3s;">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h3 class="counter" data-target="100">0</h3><span class="plus">%</span>
+                    <p>Commitment to Zero Drowning</p>
+                </div>
+            </div>
+
+            <!-- Link to the "Dedicated Page" requested in the table -->
+            <div style="margin-top: 50px;">
+                <a href="#" class="cta-button" style="background-color: var(--white); color: var(--primary-blue);">View Full Data Report</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE DO SECTION (The 7 Core Programs) -->
+    <section id="whatwedo" class="programs-section">
         <div class="container">
-            <h2 class="section-title fade-in">Our Core Pillars</h2>
+            <h2 class="section-title fade-in">What We Do</h2>
             <div class="grid-container">
                 
+                <!-- Program 1 -->
                 <div class="content-card slide-up">
-                    <div class="floating-icon"><i class="fa-solid fa-microscope"></i></div>
+                    <div class="program-img-wrapper">
+                        <!-- Replace src with actual images later -->
+                        <img src="images/prog-research.jpg" alt="Drowning Research" onerror="this.src='https://via.placeholder.com/400x250/004b87/ffffff?text=Drowning+Research'">
+                    </div>
                     <div class="card-body">
                         <h3>Drowning Research</h3>
                         <p>Execution of Learning Conferences, WHO ICD-10 epidemiological tracking, policy studies, and academic publications.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
                     </div>
                 </div>
 
+                <!-- Program 2 -->
                 <div class="content-card slide-up">
-                    <div class="floating-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="program-img-wrapper">
+                        <img src="images/prog-partners.jpg" alt="Strategic Partnerships" onerror="this.src='https://via.placeholder.com/400x250/004b87/ffffff?text=Partnerships'">
+                    </div>
                     <div class="card-body">
                         <h3>Strategic Partnerships</h3>
                         <p>Establishing powerful collaborative alliances with LGUs, national line agencies, international NGOs, and corporate partners.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
                     </div>
                 </div>
 
+                <!-- Program 3 -->
                 <div class="content-card slide-up">
-                    <div class="floating-icon"><i class="fa-solid fa-child-reaching"></i></div>
+                    <div class="program-img-wrapper">
+                        <img src="images/prog-nippers.jpg" alt="Nippers & Youth Survival" onerror="this.src='https://via.placeholder.com/400x250/004b87/ffffff?text=Nippers'">
+                    </div>
                     <div class="card-body">
                         <h3>Nippers & Youth Survival</h3>
                         <p>Grassroots youth water-familiarization, survival swimming literacy, and essential coastal resilience modules.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
                     </div>
                 </div>
 
+                <!-- Program 4 -->
                 <div class="content-card slide-up">
-                    <div class="floating-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="program-img-wrapper">
+                        <img src="images/prog-cpr.jpg" alt="Emergency Care & CPR" onerror="this.src='https://via.placeholder.com/400x250/004b87/ffffff?text=CPR+%26+First+Aid'">
+                    </div>
                     <div class="card-body">
                         <h3>Emergency Care & CPR</h3>
                         <p>Community responder and professional Basic Life Support (BLS) training strictly adhering to the ANZCOR standard.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
                     </div>
                 </div>
 
+                <!-- Program 5 -->
                 <div class="content-card slide-up">
-                    <div class="floating-icon"><i class="fa-solid fa-life-ring"></i></div>
+                    <div class="program-img-wrapper">
+                        <img src="images/prog-lifeguard.jpg" alt="Professional Lifeguarding" onerror="this.src='https://via.placeholder.com/400x250/004b87/ffffff?text=Lifeguarding'">
+                    </div>
                     <div class="card-body">
                         <h3>Professional Lifeguarding</h3>
-                        <p>Standardized open-water, pool, and mechanized rescue capabilities (IRB/Jet Ski) encompassing robust instructor development.</p>
+                        <p>Standardized open-water, pool, and mechanized rescue capabilities encompassing robust instructor development.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
                     </div>
                 </div>
 
+                <!-- Program 6 -->
                 <div class="content-card slide-up">
-                    <div class="floating-icon"><i class="fa-solid fa-person-chalkboard"></i></div>
+                    <div class="program-img-wrapper">
+                        <img src="images/prog-symposium.jpg" alt="Prevention Symposiums" onerror="this.src='https://via.placeholder.com/400x250/004b87/ffffff?text=Symposiums'">
+                    </div>
                     <div class="card-body">
                         <h3>Prevention Symposiums</h3>
                         <p>Secondary school dry-land water safety programs deploying the innovative participant "Skills Passport" system.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
                     </div>
                 </div>
 
+                <!-- Program 7 -->
                 <div class="content-card slide-up">
-                    <div class="floating-icon"><i class="fa-solid fa-medal"></i></div>
+                    <div class="program-img-wrapper">
+                        <img src="images/prog-sports.jpg" alt="Lifesaving Sports" onerror="this.src='https://via.placeholder.com/400x250/004b87/ffffff?text=Lifesaving+Sports'">
+                    </div>
                     <div class="card-body">
                         <h3>Lifesaving Sports</h3>
                         <p>Annual regional and national lifesaving sports events essential for maintaining physical fitness and tactical readiness.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAININGS & EVENTS GALLERY -->
+    <section id="trainings" class="trainings-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Trainings & Events</h2>
+            
+            <div class="schedule-box slide-up">
+                <div class="schedule-header">
+                    <h3><i class="fa-regular fa-calendar-check"></i> Upcoming Club Training Schedules</h3>
+                </div>
+                <div class="schedule-body">
+                    <p><em>Schedules for San Carlos Batch 5, Bacnotan, and other affiliated clubs will be posted here soon. Please check back for updates on registration.</em></p>
+                    <a href="#contact" class="cta-button" style="font-size: 12px; padding: 10px 20px;">Inquire Now</a>
+                </div>
+            </div>
+
+            <h3 class="subsection-title text-center" style="margin-top: 50px;">Recent Highlights</h3>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item slide-up"><img src="images/pass-training-new.jpg" alt="PASS"><div class="gallery-caption">PASS Lifeguarding Training</div></div>
+                <div class="gallery-item slide-up"><img src="images/san-carlos-b4.jpg" alt="San Carlos"><div class="gallery-caption">San Carlos Lifeguarding Training Batch 4</div></div>
+                <div class="gallery-item slide-up"><img src="images/bacnotan-pushups.jpg" alt="Bacnotan"><div class="gallery-caption">Batch 1 Lifeguarding Training Bacnotan</div></div>
+                <div class="gallery-item slide-up"><img src="images/wdpd-conf.jpg" alt="WDPD"><div class="gallery-caption">1st World Drowning Prevention Day Learning Conference 2024</div></div>
+                <div class="gallery-item slide-up"><img src="images/july-training.jpg" alt="July Training"><div class="gallery-caption">July 22, 2025 Lifeguarding Training</div></div>
+                <div class="gallery-item slide-up"><img src="images/sports-flag.jpg" alt="Sports"><div class="gallery-caption">Lifesaving Sports 2026</div></div>
             </div>
         </div>
     </section>
@@ -195,112 +325,137 @@
         <div class="container">
             <h2 class="section-title">Our Affiliated Network</h2>
             <div class="clubs-layout">
-                
-                <!-- INTERACTIVE MAP CONTAINER -->
-                <div class="map-container slide-up">
-                    <div id="clubMap"></div>
-                </div>
-
-                <!-- CLASSIFIED CLUB LIST -->
+                <div class="map-container slide-up"><div id="clubMap"></div></div>
                 <div class="club-list slide-up">
-                    
-                    <!-- LUZON -->
                     <div class="region-group">
                         <h3 class="region-title"><i class="fa-solid fa-map-location-dot"></i> Luzon Region</h3>
-                        <div class="club-item">
-                            <h4>Bacnotan Municipality - La Union Club</h4>
-                            <p>President: Jamil Clifford Rivera</p>
-                        </div>
-                        <div class="club-item">
-                            <h4>San Carlos City, Pangasinan Club</h4>
-                            <p>President: Bernabe Bacani</p>
-                        </div>
+                        <div class="club-item"><h4>Bacnotan Municipality - La Union Club</h4><p>President: Jamil Clifford Rivera</p></div>
+                        <div class="club-item"><h4>San Carlos City, Pangasinan Club</h4><p>President: Bernabe Bacani</p></div>
                     </div>
-
-                    <!-- VISAYAS -->
                     <div class="region-group">
                         <h3 class="region-title"><i class="fa-solid fa-map-location-dot"></i> Visayas Region</h3>
-                        <div class="club-item">
-                            <h4>Province of Antique - San Jose Club</h4>
-                            <p>President: Broderick Train</p>
-                        </div>
-                        <div class="club-item">
-                            <h4>Bacolod City - Negros Island Club</h4>
-                            <p>President: Juan Antonio Lahorra</p>
-                        </div>
+                        <div class="club-item"><h4>Province of Antique - San Jose Club</h4><p>President: Broderick Train</p></div>
+                        <div class="club-item"><h4>Bacolod City - Negros Island Club</h4><p>President: Juan Antonio Lahorra</p></div>
                     </div>
-
-                    <!-- MINDANAO -->
                     <div class="region-group">
                         <h3 class="region-title"><i class="fa-solid fa-map-location-dot"></i> Mindanao Region</h3>
-                        <div class="club-item">
-                            <h4>City of Malaybalay - CDRRM Bukidnon Club</h4>
-                            <p>President: Raz Ledres</p>
-                        </div>
-                        <div class="club-item">
-                            <h4>General Luna Municipality - Siargao Club</h4>
-                            <p>President (Appoint): Jeffrey Tokong</p>
-                        </div>
+                        <div class="club-item"><h4>City of Malaybalay - CDRRM Bukidnon Club</h4><p>President: Raz Ledres</p></div>
+                        <div class="club-item"><h4>General Luna Municipality - Siargao Club</h4><p>President (Appoint): Jeffrey Tokong</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MEMBERS RESOURCES SECTION (Requirement #3) -->
+    <section id="members" class="resources-section fade-in">
+        <div class="container">
+            <h2 class="section-title text-center">Member Resources</h2>
+            <p class="lead-text text-center">Access official training materials, downloadable documents, and operational guidelines for affiliated clubs and members.</p>
+
+            <div class="resources-grid">
+                
+                <!-- PDF Document 1 -->
+                <div class="resource-card slide-up">
+                    <div class="resource-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                    <div class="resource-info">
+                        <h4>Lifeguarding Training Manual</h4>
+                        <p>Official training materials and modules.</p>
+                    </div>
+                    <a href="#" class="download-btn" title="Download PDF"><i class="fa-solid fa-download"></i></a>
+                </div>
+
+                <!-- PDF Document 2 -->
+                <div class="resource-card slide-up" style="animation-delay: 0.1s;">
+                    <div class="resource-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                    <div class="resource-info">
+                        <h4>SLSP Member Guidelines</h4>
+                        <p>Code of conduct and operational policies.</p>
+                    </div>
+                    <a href="#" class="download-btn" title="Download PDF"><i class="fa-solid fa-download"></i></a>
+                </div>
+
+                <!-- PDF Document 3 -->
+                <div class="resource-card slide-up" style="animation-delay: 0.2s;">
+                    <div class="resource-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <div class="resource-info">
+                        <h4>Resource List & Directory</h4>
+                        <p>Equipment logs and standard operating procedures.</p>
+                    </div>
+                    <a href="#" class="download-btn" title="Download Document"><i class="fa-solid fa-download"></i></a>
+                </div>
+                
+                <!-- PDF Document 4 -->
+                <div class="resource-card slide-up" style="animation-delay: 0.3s;">
+                    <div class="resource-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                    <div class="resource-info">
+                        <h4>Skills Passport Template</h4>
+                        <p>Downloadable PDF for trainee tracking.</p>
+                    </div>
+                    <a href="#" class="download-btn" title="Download PDF"><i class="fa-solid fa-download"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: INQUIRY & NEWSLETTER SECTION -->
+    <section id="contact" class="contact-section fade-in">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-layout">
+                <!-- Inquiry Form -->
+                <div class="inquiry-box slide-up">
+                    <h3 style="color: var(--primary-blue); margin-bottom: 20px;"><i class="fa-solid fa-envelope"></i> Send an Inquiry</h3>
+                    <form action="#" method="POST" class="contact-form">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="text" placeholder="Subject / Organization" required>
+                        <textarea rows="4" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="cta-button" style="width: 100%;">Submit Inquiry</button>
+                    </form>
+                </div>
+                
+                <!-- Newsletter & Partners Link -->
+                <div class="newsletter-box slide-up" style="animation-delay: 0.2s;">
+                    <div class="newsletter-card">
+                        <h3><i class="fa-solid fa-newspaper"></i> Monthly Newsletter</h3>
+                        <p>Subscribe to our monthly publications for updates on training schedules, symposiums, and lifesaving news.</p>
+                        <form action="#" method="POST" class="newsletter-form">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit" class="donate-btn">Subscribe</button>
+                        </form>
                     </div>
 
+                    <!-- Moved Partners to bottom side as requested -->
+                    <div class="mini-partners-card" style="margin-top: 30px;">
+                        <h3 style="color: var(--primary-blue); margin-bottom: 15px;">Our Partners</h3>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">We collaborate globally and locally with LGUs, NGOs, and International Networks.</p>
+                        <div class="mini-partner-logos">
+                            <img src="images/isla-logo.jpg" alt="ISLA">
+                            <img src="images/cudgen-logo.jpg" alt="Cudgen">
+                            <img src="images/sla-logo.jpg" alt="SLA">
+                            <img src="images/pass-logo.jpg" alt="PASS">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CATEGORIZED PARTNERS SECTION (With new animations) -->
-    <section id="partners" class="partners-section fade-in">
-        <div class="container text-center">
-            <h2 class="section-title">Global & Local Affiliations</h2>
-            
-            <div class="partner-category slide-up">
-                <h3>International Mentorship & Network</h3>
-                <div class="partners-grid">
-                    <img src="images/isla-logo.jpg" alt="ISLA">
-                    <img src="images/cudgen-logo.jpg" alt="Cudgen Headland SLSC">
-                    <img src="images/rlss-logo.jpg" alt="Royal Life Saving">
-                </div>
-            </div>
-
-            <div class="partner-category slide-up">
-                <h3>South East Asia Lifesaving Network</h3>
-                <div class="partners-grid">
-                    <img src="images/swim-vietnam.jpg" alt="SWIM Vietnam">
-                    <img src="images/sls-thailand.jpg" alt="Surf Life Saving Thailand">
-                    <img src="images/sls-myanmar.jpg" alt="Surf Lifesaving Myanmar">
-                    <img src="images/kinabalu-lss.jpg" alt="Kinabalu Life Saving Society">
-                    <img src="images/sls-vietnam.jpg" alt="Surf Life Saving Viet Nam">
-                </div>
-            </div>
-
-            <div class="partner-category slide-up">
-                <h3>Non-Government Organization Partners</h3>
-                <div class="partners-grid">
-                    <img src="images/sla-logo.jpg" alt="SLA Project PH">
-                    <img src="images/pass-logo.jpg" alt="PASS">
-                </div>
-            </div>
-
-            <div class="partner-category slide-up">
-                <h3>Local Government Units - DRRM Office Collaboration</h3>
-                <div class="partners-grid">
-                    <img src="images/negros-occidental-seal.jpg" alt="Province of Negros Occidental">
-                    <img src="images/antique-seal.jpg" alt="Province of Antique">
-                    <img src="images/malaybalay-seal.jpg" alt="City of Malaybalay">
-                    <img src="images/bacnotan-seal.jpg" alt="Bayan ng Bacnotan, La Union">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer id="footer" class="main-footer">
+    <!-- FOOTER WITH QR CODE -->
+    <footer id="donate" class="main-footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
                     <h4>Surf Life Saving Philippines</h4>
                     <p>National Office: Barangay Pandan, Bacnotan, La Union, Philippines</p>
                     <p>Duly registered with SEC & BIR.</p>
+                    <div style="margin-top: 15px;">
+                        <img src="images/qr-code.png" alt="Connect with us" style="width: 100px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                        <p style="font-size: 10px; margin-top: 5px;">Scan to Connect</p>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h4>Contact Us</h4>
@@ -325,11 +480,41 @@
 
     <!-- JAVASCRIPT SECTION -->
     <script>
+
+        // Hero Background Image Slider
+        let currentHeroIndex = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        
+        if (heroSlides.length > 0) {
+            setInterval(function() {
+                heroSlides[currentHeroIndex].classList.remove('active');
+                currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
+                heroSlides[currentHeroIndex].classList.add('active');
+            }, 5000); // Changes image every 5 seconds
+        }
+
+        // Mobile Menu Toggle
         function toggleMenu() {
             var nav = document.getElementById("navMenu");
             nav.classList.toggle("active");
         }
 
+        // Governance Carousel Script
+        let currentSlideIndex = 0;
+        function moveCarousel(direction) {
+            const track = document.getElementById('govCarousel');
+            if(!track) return;
+            const slides = Array.from(track.children);
+            if (slides.length === 0) return;
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            currentSlideIndex += direction;
+            if (currentSlideIndex < 0) { currentSlideIndex = slides.length - 1; } 
+            else if (currentSlideIndex >= slides.length) { currentSlideIndex = 0; }
+            track.style.transform = 'translateX(-' + (slideWidth * currentSlideIndex) + 'px)';
+        }
+        setInterval(function() { moveCarousel(1); }, 4000);
+
+        // Leaflet Interactive Map
         var map = L.map('clubMap').setView([12.2, 122.5], 5.5);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -338,10 +523,7 @@
         var redIcon = new L.Icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
             shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41]
+            iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41]
         });
 
         var clubsData = [
@@ -356,6 +538,37 @@
         clubsData.forEach(function(club) {
             L.marker(club.coords, {icon: redIcon}).addTo(map)
              .bindPopup("<b>" + club.name + "</b><br/>President: " + club.pres);
+        });
+
+        // Statistics Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        // Use Intersection Observer to start counting only when scrolled into view
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 15);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter); // Stop observing once counted
+                }
+            });
+        }, { threshold: 0.5 }); // Triggers when 50% of the section is visible
+
+        counters.forEach(counter => {
+            observer.observe(counter);
         });
     </script>
 </body>
