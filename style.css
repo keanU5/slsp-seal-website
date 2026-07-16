@@ -1,11 +1,12 @@
 /* 1. SETUP BASE STYLES AND COLORS */
 :root {
-    --primary-blue: #004b87; 
-    --primary-red: #e31837;  
-    --primary-yellow: #ffc72c; 
+    /* TRUE COLORS FROM THE PHILIPPINE FLAG */
+    --primary-blue: #00008B;   /* Deep Flag Blue */
+    --primary-red: #FF0000;    /* Rich Flag Red */
+    --primary-yellow: #FFED29; /* Golden Sun Yellow */
     --dark-text: #333333;
-    --light-bg: #f8fbff; /* Softer light blue-ish white for a modern feel */
-    --white: #ffffff;
+    --light-bg: #f8fbff; 
+    --white: #ffffff;          /* Flag White */
 }
 
 html { scroll-behavior: smooth; }
@@ -330,15 +331,17 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 800
     box-shadow: 0 15px 30px rgba(0,75,135,0.2);
 }
 
-.gallery-item img {
+.gallery-item img, 
+.gallery-item video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops image cleanly to fit box */
+    object-fit: cover; /* Crops image/video cleanly to fit box */
     transition: transform 0.5s ease;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.1); /* Slight zoom on image when hovered */
+.gallery-item:hover img, 
+.gallery-item:hover video {
+    transform: scale(1.1); /* Slight zoom on image/video when hovered */
 }
 
 /* Photo Caption Banner */
@@ -754,4 +757,284 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 800
 @media (max-width: 768px) {
     .stat-box h3 { font-size: 3rem; }
     .stat-box .plus { font-size: 2rem; }
+}
+
+/* =========================================
+   17. ARTISTIC HERO SLOGAN
+   ========================================= */
+.slogan-container {
+    margin: 35px 0 45px 0;
+}
+
+.artistic-slogan {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2rem; /* Larger and more impactful */
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    
+    /* Sunlit Gold Gradient Effect */
+    background: linear-gradient(45deg, #ffc72c, #fffde6, #ff8c00, #ffc72c);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* The Breathing Glow & Float Animations combined */
+    animation: 
+        shimmerText 4s infinite linear, 
+        floatSlogan 4s ease-in-out infinite;
+}
+
+/* The Subtitle underneath the slogan */
+.sub-tagline {
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 5px; /* Wide spacing looks very cinematic */
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+/* KEYFRAMES FOR THE ARTISTIC ANIMATIONS */
+
+/* 1. Makes the gradient colors shift across the text and pulses the glow */
+@keyframes shimmerText {
+    0% { 
+        background-position: 0% center; 
+        filter: drop-shadow(0 0 5px rgba(255, 199, 44, 0.4)); 
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(255, 199, 44, 0.9)); 
+    }
+    100% { 
+        background-position: 300% center; 
+        filter: drop-shadow(0 0 5px rgba(255, 199, 44, 0.4)); 
+    }
+}
+
+/* 2. Makes the slogan gently float up and down like a wave */
+@keyframes floatSlogan {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Make sure it scales down nicely on mobile phones */
+@media (max-width: 768px) {
+    .artistic-slogan { 
+        font-size: 2.2rem; 
+        letter-spacing: 1px; 
+    }
+    .sub-tagline { 
+        font-size: 0.9rem; 
+        letter-spacing: 3px; 
+    }
+}
+
+/* =========================================
+   18. "A MILLION WORDS" RUNNING GALLERY
+   ========================================= */
+.million-words-section {
+    padding: 50px 0;
+    background-color: var(--white);
+    border-bottom: 1px solid #eaeaea;
+    overflow: hidden; /* Prevents horizontal scrollbar on the whole website */
+}
+
+/* Container for the moving track */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Adds a slight fade effect on the left and right edges */
+.marquee-container::before,
+.marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+/* The track that actually moves */
+.marquee-track {
+    display: inline-block;
+    /* The animation runs for 40 seconds, infinitely, maintaining a steady speed */
+    animation: runningGallery 40s linear infinite;
+}
+
+/* Pause the scrolling if a user hovers their mouse over the pictures to look closer */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* Styling the images to look uniform and neat */
+.marquee-track img {
+    height: 250px;
+    width: 350px;
+    object-fit: cover; /* Crops the images neatly into the boxes */
+    border-radius: 12px;
+    margin: 0 15px; /* Spacing between pictures */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Slight pop-out effect when hovering over a specific picture */
+.marquee-track img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 75, 135, 0.2);
+    cursor: pointer;
+}
+
+/* Keyframes to make it loop seamlessly */
+@keyframes runningGallery {
+    0% { transform: translateX(0); }
+    /* Moves the track left by exactly half its width (the size of the first group of images) */
+    100% { transform: translateX(-50%); } 
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .marquee-track img {
+        height: 180px;
+        width: 260px;
+    }
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 50px; /* Smaller edge fades on mobile */
+    }
+}
+
+
+/* =========================================
+   19. PROGRAM DETAILS MODAL & CAROUSEL
+   ========================================= */
+/* Make the button look exactly like your old Read More link */
+.read-more-btn {
+    margin-top: auto;
+    background: none;
+    border: none;
+    text-align: left;
+    color: var(--primary-red);
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0;
+}
+.read-more-btn:hover { color: var(--primary-blue); }
+
+/* The Dark Background Overlay */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(2, 33, 149, 0.85); /* Matches your Flag Blue */
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+/* The White Pop-up Box */
+.modal-content {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto; /* Adds scrollbar if content is too long */
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border-top: 6px solid var(--primary-yellow);
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Close 'X' Button */
+.close-modal {
+    position: absolute;
+    top: 15px; right: 25px;
+    font-size: 2.5rem;
+    color: #999;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1;
+}
+.close-modal:hover { color: var(--primary-red); }
+
+/* Modal Carousel Styling */
+.modal-carousel-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.modal-track-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    background: #eee;
+}
+
+.modal-track {
+    display: flex;
+    list-style: none;
+    padding: 0; margin: 0;
+    transition: transform 0.5s ease;
+}
+
+.modal-track li {
+    min-width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.modal-track img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.modal-btn {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    background: var(--primary-yellow);
+    color: var(--primary-blue);
+    border: none; border-radius: 50%;
+    width: 40px; height: 40px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+.modal-btn:hover { background: var(--primary-red); color: var(--white); }
+.modal-carousel-container .prev-btn { left: -15px; }
+.modal-carousel-container .next-btn { right: -15px; }
+
+@media (max-width: 768px) {
+    .modal-content { padding: 25px 20px; }
+    .modal-btn { width: 35px; height: 35px; }
+    .modal-carousel-container .prev-btn { left: 5px; }
+    .modal-carousel-container .next-btn { right: 5px; }
 }
