@@ -596,11 +596,18 @@
                 <!-- Inquiry Form -->
                 <div class="inquiry-box slide-up">
                     <h3 style="color: var(--primary-blue); margin-bottom: 20px;"><i class="fa-solid fa-envelope"></i> Send an Inquiry</h3>
-                    <form action="#" method="POST" class="contact-form">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                        <input type="text" placeholder="Subject / Organization" required>
-                        <textarea rows="4" placeholder="Your Message" required></textarea>
+                    <form action="https://formsubmit.co/reymarkmataejes@gmail.com" method="POST" class="contact-form">
+                        <!-- Hidden Settings -->
+                        <input type="hidden" name="_subject" value="New Website Inquiry!">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <!-- Visible Inputs -->
+                        <input type="text" name="Full_Name" placeholder="Full Name" required>
+                        <input type="email" name="Email_Address" placeholder="Email Address" required>
+                        <input type="text" name="Organization" placeholder="Subject / Organization" required>
+                        <textarea name="Message" rows="4" placeholder="Your Message" required></textarea>
+                        
                         <button type="submit" class="cta-button" style="width: 100%;">Submit Inquiry</button>
                     </form>
                 </div>
@@ -610,8 +617,14 @@
                     <div class="newsletter-card">
                         <h3><i class="fa-solid fa-newspaper"></i> Monthly Newsletter</h3>
                         <p>Subscribe to our monthly publications for updates on training schedules, symposiums, and lifesaving news.</p>
-                        <form action="#" method="POST" class="newsletter-form">
-                            <input type="email" placeholder="Enter your email address" required>
+                        <form action="https://formsubmit.co/reymarkmataejes@gmail.com" method="POST" class="newsletter-form">
+                            <!-- Hidden Settings -->
+                            <input type="hidden" name="_subject" value="New Newsletter Subscriber!">
+                            <input type="hidden" name="_captcha" value="false">
+                            
+                            <!-- Visible Input -->
+                            <input type="email" name="Subscriber_Email" placeholder="Enter your email address" required>
+                            
                             <button type="submit" class="donate-btn">Subscribe</button>
                         </form>
                     </div>
