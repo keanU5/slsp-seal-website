@@ -41,6 +41,7 @@
                 <!-- 1 --> <li><a href="#home" onclick="toggleMenu()">Home</a></li>
                 <!-- 2 --> <li><a href="#about" onclick="toggleMenu()">About Us</a></li>
                 <!-- 3 --> <li><a href="#whatwedo" onclick="toggleMenu()">What We Do</a></li>
+                <li><a href="#press-release" onclick="toggleMenu()">Press Release</a></li>
                 <!-- 4 --> <li><a href="#trainings" onclick="toggleMenu()">Trainings</a></li>
                 <!-- 5 --> <li><a href="#clubs" onclick="toggleMenu()">Clubs</a></li>
                 <!-- 6 --> <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
@@ -422,6 +423,17 @@
             </div>
         </div>
     </section>
+
+    <!-- PRESS RELEASE SECTION -->
+<section id="press-release" class="press-section">
+  <div class="container">
+    <h2 class="section-title">Press Releases & Announcements</h2>
+    <div id="press-release-container" class="press-grid">
+      <!-- Press Releases will automatically render here -->
+    </div>
+  </div>
+</section>
+    
 
     <!-- TRAININGS & EVENTS GALLERY -->
     <section id="trainings" class="trainings-section fade-in">
@@ -922,6 +934,22 @@
             
             track.style.transform = `translateX(-${currentModalSlide * 100}%)`;
         }
+
+        fetch('https://opensheet.elk.sh/YOUR_SHEET_ID/1') //
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('press-release-container');
+    container.innerHTML = data.map(item => `
+      <div class="press-card">
+        <img src="${item.Image}" alt="${item.Title}">
+        <span class="press-date">${item.Date}</span>
+        <h3>${item.Title}</h3>
+        <p>${item.Summary}</p>
+        <a href="${item.Link}" target="_blank" class="btn-read-more">Read Full Release</a>
+      </div>
+    `).join('');
+  });
+               
     </script>
 </body>
 </html>
