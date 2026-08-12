@@ -424,16 +424,31 @@
         </div>
     </section>
 
-    <!-- PRESS RELEASE SECTION -->
+    <<!-- PRESS RELEASE SECTION -->
 <section id="press-release" class="press-section">
   <div class="container">
-    <h2 class="section-title">Press Releases & Announcements</h2>
-    <div id="press-release-container" class="press-grid">
-      <!-- Press Releases will automatically render here -->
+    <div class="section-header">
+      <h2 class="section-title">Press Releases & Announcements</h2>
+      <p class="section-subtitle">Official statements and international partnership updates from the SLSP-SEAL Network.</p>
+    </div>
+
+    <!-- Dynamic Container where releases load -->
+    <div id="press-release-grid" class="press-grid">
+      <div class="press-loading">Loading latest press releases...</div>
     </div>
   </div>
 </section>
-    
+
+<!-- FULL ARTICLE MODAL -->
+<div id="pressModal" class="press-modal-overlay" style="display:none;" onclick="closePressModalOnOuterClick(event)">
+  <div class="press-modal-card">
+    <button class="press-modal-close" onclick="closePressModal()">&times;</button>
+    <div id="pressModalContent">
+      <!-- Full article content renders here -->
+    </div>
+  </div>
+</div>
+
 
     <!-- TRAININGS & EVENTS GALLERY -->
     <section id="trainings" class="trainings-section fade-in">
